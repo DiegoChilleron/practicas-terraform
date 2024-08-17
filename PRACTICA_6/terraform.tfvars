@@ -13,3 +13,8 @@ tags = {
 }
 
 sg_ingress_cidr = "0.0.0.0/0"
+
+ec2_specs = {
+  "ami"           = "ami-0ae8f15ae66fe8cda"
+  "instance_type" = "t2.micro"
+}
