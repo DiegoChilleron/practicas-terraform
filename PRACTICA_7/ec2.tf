@@ -15,7 +15,7 @@ resource "aws_instance" "public_instance" {
   user_data              = file("scripts/user_data.sh")
 
   tags = {
-    "Name" = each.value
+    "Name" = "${each.value}-${local.sufix}"
   }
 }
 
@@ -29,7 +29,7 @@ resource "aws_instance" "monitoring_instance" {
   user_data              = file("scripts/user_data.sh")
 
   tags = {
-    "Name" = "Monitoreo"
+    "Name" = "Monitoreo-${local.sufix}"
   }
 }
 

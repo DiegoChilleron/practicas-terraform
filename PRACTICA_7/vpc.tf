@@ -1,7 +1,7 @@
 resource "aws_vpc" "vpc_virginia" {
   cidr_block = var.virginia_cidr
   tags = {
-    "Name" = "vpc_virginia"
+    "Name" = "vpc_virginia-${local.sufix}"
   }
 }
 
@@ -10,7 +10,7 @@ resource "aws_subnet" "public_subnet" {
   cidr_block              = var.subnets[0]
   map_public_ip_on_launch = true
   tags = {
-    "Name" = "public_subnet"
+    "Name" = "public_subnet-${local.sufix}"
   }
 }
 
@@ -18,7 +18,7 @@ resource "aws_subnet" "private_subnet" {
   vpc_id     = aws_vpc.vpc_virginia.id
   cidr_block = var.subnets[1]
   tags = {
-    "Name" = "private_subnet"
+    "Name" = "private_subnet-${local.sufix}"
   }
 }
 
@@ -26,7 +26,7 @@ resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc_virginia.id
 
   tags = {
-    Name = "igw vpc Virginia"
+    Name = "igw vpc Virginia-${local.sufix}"
   }
 }
 
@@ -40,7 +40,7 @@ resource "aws_route_table" "public_crt" {
   }
 
   tags = {
-    Name = "public crt"
+    Name = "public crt-${local.sufix}"
   }
 }
 
@@ -77,7 +77,7 @@ resource "aws_security_group" "sg_public_instance" {
 
 
   tags = {
-    Name = "Public Instance SG"
+    Name = "Public Instance SG-${local.sufix}"
   }
 }
 

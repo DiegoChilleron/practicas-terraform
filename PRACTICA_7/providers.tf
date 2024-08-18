@@ -4,6 +4,11 @@ terraform {
       source  = "hashicorp/aws"
       version = ">=5.57.0, !=5.59.0, <5.61.0"
     }
+
+    random = {
+      source  = "hashicorp/random"
+      version = "3.4.3"
+    }
   }
   required_version = ">=1.9.4"
 }
