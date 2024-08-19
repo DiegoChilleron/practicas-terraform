@@ -8,6 +8,6 @@ resource "random_string" "sufijo-s3" {
     upper = false
 }
 
-locals {
-    s3-sufix = "${var.tags.project}-${random_string.sufijo-3.id}"
-}
+# locals {
+#     s3-sufix = "${var.tags.project}-${random_string.sufijo-3.id}"
+# }

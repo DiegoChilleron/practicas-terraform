@@ -90,18 +90,18 @@ output "s3-arn" {
   value = module.mybucket.s3_bucket_arn
 }
 
-#Module ftstate-backend
-module "terraform_state_backend" {
-  source     = "cloudposse/tfstate-backend/aws"
-  version    = "1.5.0"
-  namespace  = "eg"
-  stage      = "test"
-  name       = "terraform"
-  environment = "us-east-1"
-  attributes = ["state"]
+# #Module ftstate-backend
+# module "terraform_state_backend" {
+#   source     = "cloudposse/tfstate-backend/aws"
+#   version    = "1.5.0"
+#   namespace  = "eg"
+#   stage      = "test"
+#   name       = "terraform"
+#   environment = "us-east-1"
+#   attributes = ["state"]
 
-  terraform_backend_config_file_path = "."
-  terraform_backend_config_file_name = "backend.tf"
-  force_destroy                      = false
-}
+#   terraform_backend_config_file_path = "."
+#   terraform_backend_config_file_name = "backend.tf"
+#   force_destroy                      = false
+# }
  
