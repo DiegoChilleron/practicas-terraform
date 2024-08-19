@@ -22,3 +22,5 @@ ec2_specs = {
 }
 
 enable_monitoring = false
+
+ingress_ports_list = [ 22, 80, 443 ]
